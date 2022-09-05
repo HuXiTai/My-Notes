@@ -89,3 +89,7 @@ export default { // Highlighted
 ```
 ```css
 ```
+
+::: tip 提示
+This is a tip
+:::
