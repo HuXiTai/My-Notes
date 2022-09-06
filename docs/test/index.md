@@ -1,4 +1,7 @@
-![img-001](/images/001.png)
+# 我的文档
+# {{ $frontmatter.title }}
+# {{ $frontmatter.editLink }}
+<!-- # {{ $frontmatter.head }} -->
 ::: tip
 This is a tip
 :::
@@ -61,3 +64,18 @@ export default { // Highlighted
   }
 }
 ```
+
+
+```html
+```
+```css
+```
+
+::: tip 提示
+This is a tip
+:::
+
+::: details 点我查看题目
+```js
+```
+:::

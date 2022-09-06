@@ -101,6 +101,7 @@ module.exports = {
           { text: "小程序", link: "/my_md/小程序" },
           { text: "Echarts", link: "/my_md/Echarts" },
           { text: "Electron", link: "/my_md/Electron" },
+          { text: "test", link: "/test/index.md" },
         ],
       },
     ],
