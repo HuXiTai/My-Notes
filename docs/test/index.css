@@ -1,0 +1,24 @@
+.parent {
+  flex: x; /* 子项在主轴所占的宽/高份数 */
+  flex-grow: x; /* 在主轴，排完之后，有剩余空间，分给设置了flex-grow的元素 */
+  flex-shrink: 1;
+  /* 
+      弹性收缩因子：
+      宽度相同，因子相同
+      宽度相同，因子不同
+      宽度不同，因子相同
+      宽度不同，因子不同：宽度的比例乘因子的比例
+  */
+  flex-shrink: 0; /* 防止盒子flex后自动压缩 */
+  flex-basis: 0; /* 默认把宽高设置成0 */
+  align-self: flex-start;
+  /* 
+      设置子项在侧轴上的排列方式
+      值有：
+      flex-start
+      flex-end
+      center
+      stretch
+  */
+  order: 0; /* 设置子项在主轴上排列的顺序，默认是0，值越小越靠前 */
+}
