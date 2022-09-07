@@ -32,7 +32,7 @@ module.exports = {
       },
     ],
   ],
-  title: "我的文档", //标题
+  title: "我的笔记", //标题
   description: "Just playing around.", //描述
   //ineNumbers: true, //代码块是否启用行号
   //base: "./", //基础 URL

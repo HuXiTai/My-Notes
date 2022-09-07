@@ -1,3 +1,5 @@
+## 推荐文档：
+- [MDN](https://developer.mozilla.org/zh-CN/)
 ## 书写位置：
 `<script></script>`标签里 
 
@@ -186,7 +188,7 @@ if(a === 3) {
     表达式1 ? 代码块1 : 代码块2;
 */
 
-const a = 3
+var a = 3
 a === 3 ? console.log("yes") : console.log("no")
 
 /* 输出：yes */
@@ -207,7 +209,7 @@ a === 3 ? console.log("yes") : console.log("no")
     }
 */
 
-const a = 3
+var a = 3
 switch (a) {
     case 1:
         console.log("我是1")
@@ -336,7 +338,7 @@ function fn() {}
 - Array：
 ::: details 点我查看代码
 ```js
-const arr = [1, 2, 3, 4];
+var arr = [1, 2, 3, 4];
 ```
 :::
 - Math：
@@ -441,7 +443,7 @@ patt.test("Hi!");//false
   }
 
   console.log(add()); //60
-  console.log(a, b);
+  console.log(a, b); //40 20
 }
 
 /* --------------------------------------- */
@@ -560,8 +562,8 @@ patt.test("Hi!");//false
 
       function fn3() {
         var a = 4;
-        console.log(a); //a的值 ?
-        console.log(b); //b的值 ?
+        console.log(a); //4
+        console.log(b); //22
       }
       fn3();
     }
@@ -582,7 +584,7 @@ patt.test("Hi!");//false
   }
 
   function fun2() {
-    console.log(num); //?
+    console.log(num); //10
   }
 
   fun();
@@ -601,7 +603,7 @@ patt.test("Hi!");//false
 {
   // 题1
   function fn() {
-    console.log(x);
+    console.log(x); //10
   }
   function show(f) {
     var x = 20;
@@ -619,7 +621,7 @@ patt.test("Hi!");//false
   var a;
   // 只声明未赋值的变量和函数同名时，函数的优先级更高
   // 已赋值的变量，变量的优先级更高
-  console.log(typeof a);
+  console.log(typeof a); //function
 }
 
 /* --------------------------------------- */
@@ -631,7 +633,7 @@ patt.test("Hi!");//false
   if (!(b in window)) {
     b = 1;
   }
-  console.log(b);
+  console.log(b); //undefined
 }
 
 /* --------------------------------------- */
@@ -639,7 +641,7 @@ patt.test("Hi!");//false
 {
   // 题4：
   function c(c) {
-    console.log(c);
+    console.log(c); //1
     var c = 3;
   }
   var c;
@@ -653,7 +655,7 @@ patt.test("Hi!");//false
   // 题4
   var fn;
   fn = function () {
-    console.log(fn);
+    console.log(fn); //() {console.log(fn);}
   };
   fn();
   var obj;
@@ -723,6 +725,8 @@ var 对象名 = {
     属性名: 属性值,
     方法名: function() { 函数体 }
 }
+
+/* var obj = { name: "芝麻糊", eat: function () {} }; */
 ```
 3. 内置构造函数创建:
 ```js
@@ -732,6 +736,15 @@ var 对象名 = new Object();
 对象名["属性名"] = 属性值;
 
 对象名.方法名 = function(){ 函数体 };
+
+/* 
+var obj = new Object();
+var tag = "name";
+obj.name = "每天一碗";
+obj[tag] = "芝麻糊";
+obj.eat = function () {};
+console.log(obj); //{name: '芝麻糊', eat: ƒ}
+*/
 ```
 4. 自定义构造函数创建：
 ```js
@@ -740,6 +753,15 @@ function 构造函数名(形参1,形参n) {
     this.方法名 = function() { 函数体 };
 }
 var 对象名 = new 构造函数名(实参1,实参n)
+
+/* 
+function Obj(name) {
+  this.name = name;
+  this.age = function () {};
+}
+var obj = new Obj("芝麻糊");
+console.log(obj); //{name: '芝麻糊', age: ƒ}
+*/
 ```
 
 ## 对象的增删改查：
@@ -748,14 +770,14 @@ var 对象名 = new 构造函数名(实参1,实参n)
 1. `对象.方法名;`
 2. `对象["属性名"];`
 ```js
-const obj = {
+var obj = {
   name: "芝麻糊",
   age: 18,
   eat() {
     console.log("吃饭");
   },
 };
-const tag = "name"
+var tag = "name"
 console.log(obj.name); //芝麻糊
 console.log(obj[tag]); //芝麻糊
 console.log(obj.eat); /* eat() {console.log("吃饭");} */
@@ -770,14 +792,14 @@ console.log(obj.eat); /* eat() {console.log("吃饭");} */
 2. `delete 对象["属性名"];`
 3. `delete 对象.方法名;`
 ```js
-const obj = {
+var obj = {
   name: "芝麻糊",
   age: 18,
   eat() {
     console.log("吃饭"
   },
 };
-const tag = "age";
+var tag = "age";
 delete obj.name;
 delete obj[tag];
 delete obj.eat;
@@ -790,7 +812,7 @@ console.log(obj); //{}
   for(let key in 对象){} //key表示对象的属性名和方法名/索引
   for(let value of 非对象){} //value表示值
 */
-const obj = {
+var obj = {
   name: "芝麻糊",
   age: 18,
   eat() {
@@ -880,27 +902,665 @@ console.log("#############################");
 ## this：
 ![img-011](/images/011.png)
 
+::: details 点我查看题目
+```js
+/* 相关测试题 */
+
+{
+  /* 题1 */
+  var a = 10;
+
+  function foo() {
+    console.log(this.a);
+  }
+  foo();
+  /* 输出：10 */
+}
+
+{
+  /* 题2 */
+
+  ("use strict"); // 在严格模式下, 函数中指向window的this都为undefined
+  var a = 10;
+
+  function foo() {
+    console.log("this1", this);
+    console.log(window.a);
+    console.log(this.a);
+  }
+  console.log(window.foo);
+  console.log("this2", this);
+  foo();
+  /*
+    输出：
+    foo()
+    this2 window
+    this1 window
+    10
+    10
+  */
+}
+
+{
+  /* 题3 */
+
+  /* let / const的全局变量不会添加为window的属性 */
+  let a = 10;
+  const b = 20;
+
+  function foo() {
+    console.log(this.a);
+    console.log(this.b);
+  }
+  foo();
+  console.log(window.a);
+  /*
+    输出：
+    undefined
+    undefined
+    undefined
+  */
+}
+
+{
+  /* 题4 */
+
+  var a = 1;
+
+  function foo() {
+    var a = 2;
+    var inner = () => {
+      console.log(a, this.a);
+    };
+    inner();
+  }
+  foo();
+  /* 输出：2 1 */
+}
+
+{
+  /* 题5 */
+
+  function foo() {
+    console.log(this.a);
+  }
+  var obj = {
+    a: 1,
+    foo,
+  };
+  var a = 2;
+  obj.foo();
+  /* 输出：1 */
+}
+
+{
+  /* 题6 */
+
+  function foo() {
+    console.log(this.a);
+  }
+  var obj = {
+    a: 1,
+    foo,
+  };
+  var a = 2;
+  var foo2 = obj.foo;
+  var obj2 = {
+    a: 3,
+    foo2: obj.foo,
+  };
+
+  obj.foo();
+  foo2();
+  obj2.foo2();
+  /*
+    输出：
+    1
+    2
+    3
+  */
+}
+
+{
+  /* 题7 */
+
+  function foo() {
+    console.log(this.a);
+    return function () {
+      console.log(this.a);
+    };
+  }
+  var obj = {
+    a: 1,
+  };
+  var a = 2;
+
+  foo();
+  foo.call(obj);
+  foo().call(obj);
+  /*
+    输出：
+    2
+    1
+    2
+    1
+  */
+}
+
+{
+  /* 题8 */
+
+  function foo() {
+    console.log(this.a);
+    return function () {
+      console.log(this.a);
+    };
+  }
+  var obj = {
+    a: 1,
+  };
+  var a = 2;
+
+  foo();
+  foo.bind(obj);
+  foo().bind(obj);
+  /*
+    输出：
+    2
+    2
+  */
+}
+
+{
+  /* 题9 */
+
+  var obj = {
+    name: "obj",
+    foo1: () => {
+      console.log(this.name);
+    },
+    foo2: function () {
+      console.log(this.name);
+      return () => {
+        console.log(this.name);
+      };
+    },
+  };
+  var name = "window";
+  obj.foo1();
+  obj.foo2()();
+  /* 
+    输出：
+    window
+    obj
+    obj
+  /
+}
+```
+:::
+
 ## new：
+new一个对象做了4步：
+   1. 堆内存里开辟空间
+   2. this变量指向该内存
+   3. 执行函数的代码
+   4. 生成对象的实例并将空间的地址返回
+
+::: details 点我查看手写new
+```js
+/* 
+    1、创建一个新对象。
+    2、让这个新的对象的原型指向该构造函数的原型对象。
+    3、执行构造函数，并且将构造函数指向新的对象。
+    4、拿到构造函数最后返回的结果，判断是否是对象或者函数，如果是的话，则直接返回。如果不是则返回新创建的对象。
+*/
+function createNew(con) {
+  let result = Object.create(con.prototype)
+  let args = [].slice.call(arguments, 1)
+  let ret = con.apply(result, args) 
+  return ((typeof ret === 'object' && ret !== null) || typeof ret === 'function') ? ret : result
+}
+function Person(name, age, score) {
+  this.name = name
+  this.age= age
+  this.score = score
+  return {name:this.name}
+}
+
+let rest = createNew(Person, 'dmc', 21, 100)
+console.log(rest)
+```
+:::
 
 ## 原型对象：
+显式原型对象：`prototype`
+
+隐式原型对象：`__proto__`
+
+原型链：
+![img-012](/images/012.png)
+
+::: details 点我查看代码
+```js
+function Star(name, age) {
+  this.name = name;
+  this.age = age;
+  this.sing = function () {
+    console.log(this.name + '会唱歌');
+  }
+}
+ 
+// 每个对象从被创建开始就和 “另一个对象”上继承属性，“另一个对象”就是原型
+// 由对象和原型组成的链就叫原型链
+var ldh = new Star('刘德华', 3);
+ 
+//每一个构造函数都有prototype属性，该属性指向一个对象
+//实例化对象都会有一个属性__proto__，指向构造函数的原型对象prototype
+console.log(Star.prototype);    //constructor: ƒ Star(name, age)
+console.log(Star.prototype == ldh.__proto__);    //true
+ 
+//Star的原型对象prototype的构造函数construor指向Star本身
+console.log(Star.prototype.constructor == Star);   //true
+ 
+//Star原型对象prototype.__proto__指向Object原型对象prototype
+console.log(Star.prototype.__proto__ == Object.prototype);    //true
+ 
+//Object原型对象prototype的构造函数construor指向Object构造函数
+console.log(Object.prototype.constructor == Object);    //true
+ 
+//Object原型对象prototype.__proto__指向空null
+console.log(Object.prototype.__proto__);    //null
+```
+:::
 
 ## 改变函数内部this的指向：
+```js
+var o = {
+    name:'andy'
+}
+function fn(a, b) {
+    console.log(this);
+    console.log(a + b);
+}
+```
+1. call()
+```js
+fn.call(a, b, c); //Function原型对象上的一个方法
+/* 
+  功能：改变"fn"中的"this"指向。"nullish"为"window"，基本类型为包装对象，复杂类型为本身，并调用"fn"
+  参数：a：参考的指向，"b、c、..."：调用"fn"时传递的实参
+  返回值：调用"fn"时的返回值
+*/
+```
+3. apply()
+```js
+fn.apply(a, [b, c]); //Function原型对象上的一个方法
+/*
+  功能：同"call"
+  参数：a：参考的指向，第二个参数为数组，为其调用fn时传递的实参
+  返回值：同"call"
+*/
+```
+4. bind()
+```js
+fn.bind(a, b, c); //Function原型对象上的一个方法
+/*
+  功能：同"call"
+  参数：a：参考的指向，"b、c、..."：调用"fn"时传递的实参，可传可不传
+  返回值：为改变了"this"后的"fn"
+*/
+```
 
-## 内置对象：
+## 内置对象(JSON)：
+- 轻量级的数据交换格式
+```js
+var data = {
+  name: "芝麻糊",
+  age: 18,
+};
+
+console.log(data.toString()); //[object Object]
+
+console.log(JSON.stringify(data)); 
+/* 
+  输出：'{"name":"芝麻糊","age":18}'
+  把"Object"或"Array"类型的数据转换成字符串
+*/
+
+const strData = JSON.stringify(data);
+console.log(JSON.parse(strData)); 
+/* 
+  输出：{name: '芝麻糊', age: 18}
+  把字JSON字符串转成"Object"或"Array"类型
+*/
+```
+::: tip 提示
+可以用来深拷贝但是值为非基本类型和非数组对象时不能使用
+:::
 
 ## Math对象:
+```js
+var num = 3.14159;
+var _num = -3.14159;
+
+Math.PI; //圆周率，返回：3.141592653589793
+Math.ceil(num); //向上取整，返回：4
+Math.floor(num); //向下取整，返回：3
+Math.trunc(num); //方法会将数字的小数部分去掉， 只保留整数部分，返回：3
+Math.round(num); //四舍五入版 就近取整 注意 -3.5 结果是 -3，返回：3
+Math.abs(_num); //绝对值，返回：3.14159
+Math.max(num, _num); //求多个数中最大，返回：3.14159
+Math.min(num, _num); //求多个数中最大最小值，返回：-3.14159
+Math.random(); //获取范围在[0,1)内的随机值，返回：0.7008837314660161
+Math.pow(num, _num); //幂运算，返回：0.02742584920973046
+Math.sin(num); //正弦运算，返回：0.00000265358979335273
+Math.sign(num); //判断一个数,正数(返回1)负数(返回-1) 0(返回0) NaN(返回NaN)，返回：1
+Math.sqrt(num); //平方根，返回：1.7724531023414978
+Math.cbrt(num); //立方根，返回：1.4645914751987923
+Math.hypot(num); //求所有参数平方和的平方根(勾股定理)，返回：3.14159
+```
 
 ## Date函数: 
+- 实例化后才能使用
+```js
+const date = new Date();
+
+date.getFullYear(); //年
+date.getMonth() + 1; //月
+date.getDate(); //日
+date.getDay(); //星期
+date.getHours(); //时
+date.getMinutes(); //分
+date.getSeconds(); //秒
+date.getMilliseconds(); //毫秒
+
+/* 1970年1月1日0点起到现在经过的毫秒数: */
+date.getTime(); //1662518317897
+date.valueOf(); //1662518317897
+Date.now(); //1662518317897
++new Date(); //1662518317897
+
+/* 本地格式化字符串: */
+date.toLocaleTimeString()); //10:39:34
+date.toLocaleDateString()); //2022/9/7
+```
 
 ## 包装对象：
+```js
+new Number("100"); //Number {100}
+new String(123); //String {'123'}
+new Boolean(true); //Boolean {true}
+```
 
 ## Number对象的静态方法:
+```js
+Number.parseInt("123"); //将字符串转换为对应的数值（和global的parseInt一致），返回：123
+Number.isFinite(10 / 5); //用来检测传入的参数是否是一个有穷数，返回：true
+Number.isNaN(NaN); //判断是否是NaN，返回：true
+Number.isInteger(123); //判断是否是整数，返回：true
+
+(3.14159).toFixed(2); //截取小数点后n位，返回：3.14
+```
 
 ## Object对象的静态方法：
+```js
+const obj1 = { name: "芝麻糊" };
+const obj2 = { age: "18" };
+
+Object.assign(obj1, obj2);
+/* 
+  把后边所有对象拼接到obj1上
+  返回：{name: '芝麻糊', age: '18'}
+*/
+
+Object.is(obj1, obj2);
+/* 
+  判断两个对象是否相等, 修复了NaN不等NaN的问题
+  返回：false
+*/
+
+Object.freeze(obj1); //冻结原对象,返回原对象引用,对象变成了只读
+obj1.name = "每天一碗";
+console.log(obj1); //{name: '芝麻糊', age: '18'}
+
+Object.seal(obj1); //封闭原对象,返回原对象引用,不能增删，但是能改查
+delete obj1.name;
+console.log(obj1); //{name: '芝麻糊', age: '18'}
+
+Object.hasOwn(obj1, "name");
+/* 
+  只检测自有属性
+  返回：true
+*/
+
+Object.entries(obj1)
+```
 
 ## Objec对象原型对象上的方法：
+```js
+var obj = { name: "芝麻糊", age: 18 };
+
+obj.hasOwnProperty("name"); //只检测自有属性，返回：true
+Object.entries(obj); 
+/* 
+  分别用来获取键值对组成的迭代器对象
+  返回：[['name', '芝麻糊'],['age', 18]] 
+*/
+Object.keys(obj); //所有的key组成的迭代器对象，返回：['name', 'age']
+Object.values(obj); //所有的值组成的迭代器对象，返回：['芝麻糊', 18]
+```
 
 ## 字符串对象：
+`s.indexOf(s1, [index]);`
+::: details 点我查看代码
+```js
+/* 
+  功能：从前往后查找s1从index开始
+  参数："s1":要查找的字符串，"index":从第几个开始查找
+  返回值：返回对应的下标，没找到返回-1
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.indexOf("芝", 1)); //4
+```
+:::
+`s.lastIndexOf(s1, [index]);`
+::: details 点我查看代码
+```js
+/* 
+  功能：从后往前查找s1从index开始
+  参数："s1":要查找的字符串，"index":从第几个开始查找
+  返回值：返回对应的下标，没找到返回-1
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.lastIndexOf("芝", 6)); //4
+```
+:::
+`s.charAt(index);`
+::: details 点我查看代码
+```js
+/* 
+  功能：查找索引为idnex的元素
+  参数："index":查找的下标
+  返回值：查找到的字符串，没找到则返回""
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.charAt(2)); //一
+```
+:::
+`s.charCodeAt(index);`
+::: details 点我查看代码
+```js
+/* 
+  功能：查找索引为idnex的元素返回值为ASCLL
+  参数："index":查找的下标
+  返回值：查找到对应字符串的ASCLL值
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.charCodeAt(2)); //19968
+```
+:::
+`str[index];`
+::: details 点我查看代码
+```js
+/* 
+  功能：h5新增方法，等同于charAt(index)
+  参数："index":查找的下标
+  返回值：等同于charAt(index)
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str[2]); //一
+```
+:::
+`s.concat(s1, s2, sn);`
+::: details 点我查看代码
+```js
+/*
+  功能：拼接字符串
+  参数：全部为需要拼接的字符串
+  返回值：拼接后新的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.concat("阿巴", "阿巴")); //每天一碗芝麻糊阿巴阿巴
+```
+:::
+`String.fromCharCode([code1, [coden]]);`
+::: details 点我查看代码
+```js
+/*
+  功能：ASCII码对应的字符组成的字符串
+  参数：ASCII字符
+  返回值：找到的字符串，没找到返回""
+*/
+
+/* 示例 */
+console.log(String.fromCharCode(19968, 19969, 19970)); //一丁丂
+```
+:::
+`s.trim();`
+::: details 点我查看代码
+```js
+/*
+  功能：去字符串的前后空格
+  参数：无
+  返回值：返回移除头尾空格的字符串
+*/
+
+/* 示例 */
+var str = " 每天一碗芝麻糊 ";
+console.log(str.trim()); //每天一碗芝麻糊
+```
+:::
+`s.trimEnd();`
+::: details 点我查看代码
+```js
+/*
+  功能：去字符串的后空格
+  参数：无
+  返回值：返回移除尾空格的字符串
+*/
+
+/* 示例 */
+var str = " 每天一碗芝麻糊 ";
+console.log(str.trimEnd()); //"空格"每天一碗芝麻糊
+```
+:::
+`s.trimStart();`
+::: details 点我查看代码
+```js
+/*
+  功能：去字符串的前空格
+  参数：无
+  返回值：返回移除首空格的字符串
+*/
+
+/* 示例 */
+var str = " 每天一碗芝麻糊 ";
+console.log(str.trimStart()); //每天一碗芝麻糊"空格"
+```
+:::
+`s.endsWith(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断字符串末尾否包含某个字符
+  参数：s1为需要判断的字符
+  返回值：有则返回true，没有则返回false
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.endsWith("糊")); //true
+```
+:::
+`s.startsWith(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断字符串开头否包含某个字符
+  参数：s1为需要判断的字符
+  返回值：有则返回true，没有则返回false
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.startsWith("每")); //true
+```
+:::
+`s.padStart(ln, s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：当字符串不够某个长度的时候，在前边补规定的字符
+  参数：ln:判定的长度，s1:补规定的字符
+  返回值：被补充后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.padStart(10, "哈")); //哈哈哈每天一碗芝麻糊
+```
+:::
+`s.padEnd(ln, s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：当字符串不够某个长度的时候，在后边补规定的字符
+  参数：ln:判定的长度，s1:补规定的字符
+  返回值：被补充后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.padEnd(10, "哈")); //每天一碗芝麻糊哈哈哈
+```
+:::
+:small_blue_diamond:`s.replace(regexp||s1, s2);`
+::: details 点我查看代码
+```js
+/*
+  功能：找到regexp或s1替换成s2
+  参数：regexp:正则表达式，s1:字符串，s2:字符串
+  返回值：被补充后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.replace("每", "今")); //今天一碗芝麻糊
+console.log(str.replace(/^每/, "今")); //今天一碗芝麻糊
+```
+:::
 
 ## 数组对象：
 
