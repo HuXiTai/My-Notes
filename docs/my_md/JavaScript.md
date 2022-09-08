@@ -1561,6 +1561,216 @@ console.log(str.replace("每", "今")); //今天一碗芝麻糊
 console.log(str.replace(/^每/, "今")); //今天一碗芝麻糊
 ```
 :::
+`s.localeCompare(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：比大小
+  参数：s1:用来比较的字符串
+  返回值：实参大返回-1，实参小返回1，相同返回0
+*/
+
+/* 示例 */
+console.log("a".localeCompare("b")); //-1
+console.log("b".localeCompare("a")); //1
+console.log("a".localeCompare("a")); //0
+```
+:::
+:small_blue_diamond:`s.slice(start, [end]);`
+::: details 点我查看代码
+```js
+/*
+  功能：截取[start,end)
+  参数：start:开始下标，end:结束下标
+  返回值：截取后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.slice(1, 3)); //天一
+```
+:::
+:small_blue_diamond:`s.split(p, n);`
+::: details 点我查看代码
+```js
+/*
+  功能：以p为参照将其切割成n份
+  参数：P:参照字符串,n:切割份数，切割所有份填-1
+  返回值：切割后组成的数组
+*/
+
+/* 示例 */
+var str = "abcabcabc";
+console.log(str.split("b", 3)); //['a', 'ca', 'ca']
+```
+:::
+`s.substr(start, [length]);`
+::: details 点我查看代码
+```js
+/*
+  功能：类似于slice，区别是不支持负数
+  参数：start:从哪开始截取的下标(包含)，length:截取的长度
+  返回值：截取后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.substr(2, 3)); //一碗芝
+```
+:::
+`s.toLowerCase();`
+::: details 点我查看代码
+```js
+/*
+  功能：将大写英文字符转换为小写
+  参数：无
+  返回值：小写字符串
+*/
+
+/* 示例 */
+var str = "ABC";
+console.log(str.toLowerCase()); //abc
+```
+:::
+`s.toUpperCase();`
+::: details 点我查看代码
+```js
+/*
+  功能：将小写英文字符转换为大写
+  参数：无
+  返回值：大写字符串
+*/
+
+/* 示例 */
+var str = "abc";
+console.log(str.toUpperCase()); //ABC
+```
+:::
+`s.valueOf();`
+::: details 点我查看代码
+```js
+/*
+  功能：返回原始值
+  参数：无
+  返回值：有PrimitiveValue就返回它的值；没有则返回对象本身
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+var obj = { name: "芝麻糊" };
+console.log(str.valueOf()); //每天一碗芝麻糊
+console.log(obj.valueOf()); //{name: '芝麻糊'}
+```
+:::
+`n.toString(Base);`
+::: details 点我查看代码
+```js
+/*
+  功能：把n换为字符串，只能有效转换Number,Boolean类型
+  参数：Base:进制数
+  返回值：有PrimitiveValue就返回它的值；没有则返回对象本身
+*/
+
+/* 示例 */
+var num = 123;
+console.log(num.toString()); //"123"
+```
+:::
+
+ES6中字符串的操作方法：
+
+:small_blue_diamond:`s.includes(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断s中是否包含s1字符串
+  参数：s:字符串,s1:字符串
+  返回值：有则返回true，无则返回false
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.includes("一")); //true
+```
+:::
+:small_blue_diamond:`s.endsWith(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断s中是否以s1结尾
+  参数：s:字符串,s1:字符串
+  返回值：是则返回true，不是则返回false
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.startsWith("糊")); //true
+```
+:::
+`s.repeat(count);`
+::: details 点我查看代码
+```js
+/*
+  功能：将字符串s重复count次返回
+  参数：s:字符串,count:重复次数
+  返回值：重复count次后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.repeat(3)); //每天一碗芝麻糊每天一碗芝麻糊每天一碗芝麻糊
+```
+:::
+
+常见方法：
+
+`s.match(regexp||str);`
+::: details 点我查看代码
+```js
+/*
+  功能：找到一个或多个与子串或正则表达式的匹配
+  参数：正则表达式或字符串
+  返回值：匹配到的信息组成的数组，没找到返回null
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊，每天一碗芝麻糊";
+console.log(str.match("每")); //['每', index: 0, input: '每天一碗芝麻糊，每天一碗芝麻糊', groups: undefined]
+```
+:::
+`s.search(regexp||str);`
+::: details 点我查看代码
+```js
+/*
+  功能：在字符串里查找正则或子串能匹配的第一个子串
+  参数：正则表达式或字符串
+  返回值：返回第一个匹配的下标，没找到返回-1
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.search("每")); //0
+```
+:::
+`s.replace(regexp||substr,newStc);`
+::: details 点我查看代码
+```js
+/*
+  功能：替换一个或多个与子串或正则表达式匹配的子串
+  参数：参数一：正则表达式或字符串，参数二：需要被替换的字符串
+  返回值：替换后的字符串
+*/
+
+/* 示例 */
+var str = "每天一碗芝麻糊";
+console.log(str.replace("每", "今")); //今天一碗芝麻糊
+```
+:::
+
+
+
+
+
 
 ## 数组对象：
 

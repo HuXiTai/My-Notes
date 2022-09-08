@@ -10,18 +10,17 @@
   <body>
     <script>
       "use strict";
-      // >*s.replace(regexp||s1, s2); //找到regexp或s1替换成s2
+      //>s.replace(regexp||substr,newStc); //替换一个/多个与子串/正则表达式匹配的子串
 
       /*
-        功能：找到regexp或s1替换成s2
-        参数：regexp:正则表达式，s1:字符串，s2:字符串
-        返回值：被补充后的字符串
+        功能：替换一个或多个与子串或正则表达式匹配的子串
+        参数：参数一：正则表达式或字符串，参数二：需要被替换的字符串
+        返回值：替换后的字符串
       */
 
       /* 示例 */
       var str = "每天一碗芝麻糊";
       console.log(str.replace("每", "今")); //今天一碗芝麻糊
-      console.log(str.replace(/^每/, "今")); //今天一碗芝麻糊
     </script>
   </body>
 </html>
