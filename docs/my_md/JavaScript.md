@@ -1,5 +1,4 @@
-## 推荐文档：
-- [MDN](https://developer.mozilla.org/zh-CN/)
+## 推荐文档：[MDN](https://developer.mozilla.org/zh-CN/)
 ## 书写位置：
 `<script></script>`标签里 
 
@@ -1768,11 +1767,441 @@ console.log(str.replace("每", "今")); //今天一碗芝麻糊
 :::
 
 
-
-
-
-
 ## 数组对象：
+`Array.isArray(arr);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断arr是否是一个数组
+  参数：[1]为一个数组
+  返回值：布尔值
+*/
+
+/* 示例 */
+var arr = ["哈哈哈"];
+console.log(Array.isArray(arr)); //true
+```
+:::
+`Array.from(pArr);`
+::: details 点我查看代码
+```js
+/*
+  功能：将伪数组或可遍历对象转换为真数组
+  参数：[1]伪数组
+  返回值：将为数组转换后的真数组
+*/
+
+/* 示例 */
+function fn() {
+  console.log(arguments); //Arguments [callee: (...), Symbol(Symbol.iterator): ƒ]
+  console.log(Array.from(arguments)); //[]
+}
+
+fn()
+```
+:::
+`Array.of(v1, v2, v3);`
+::: details 点我查看代码
+```js
+/*
+  功能：将一系列值转为数组，解决了new Array()传一个数即长度的问题
+  参数：[n]为需转成数组每项的数据
+  返回值：一个转换后的伪数组
+*/
+
+/* 示例 */
+console.log(Array.of("每天", "一碗", "芝麻糊")); //['每天', '一碗', '芝麻糊']
+```
+:::
+`arr.includes(s1);`
+::: details 点我查看代码
+```js
+/*
+  功能：判断数组arr里是否包含s1，需匹配类型
+  参数：[1]为一个数据
+  返回值：布尔值
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.includes("每天")); //true
+```
+:::
+`arr.at(index);`
+::: details 点我查看代码
+```js
+/*
+  功能：和arr[index]类似 但是可以倒着查找，最后一个为-1
+  参数：[1]为一个数字或数字字符串
+  返回值：返回对应下标的值，找不到时返回undefined
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.at(1)); //一碗
+```
+:::
+:small_blue_diamond:`arr.push(s1, s2, sn);`
+::: details 点我查看代码
+```js
+/*
+  功能：和arr[index]类似 但是可以倒着查找，最后一个为-1
+  参数：[1]为一个数字或数字字符串
+  返回值：返回对应下标的值，找不到时返回undefined
+*/
+
+/* 示例 */
+const arr = ["每天"];
+console.log(arr.push("一碗", "芝麻糊")); //3
+console.log(arr); //['每天', '一碗', '芝麻糊']
+```
+:::
+:small_blue_diamond:`arr.unshift(s1, s2, sn);`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，在其前面依次添加其传递的参数(s1+s2+arr)
+  参数：[n]为其添加的数据
+  返回值：为数组长度
+*/
+
+/* 示例 */
+const arr = ["每天"];
+console.log(arr.unshift("一碗", "芝麻糊")); //3
+console.log(arr); //['一碗', '芝麻糊', '每天']
+```
+:::
+:small_blue_diamond:`arr.pop();`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，删除其最后的一个值
+  参数：[0]无论有啥参数都是一个功能
+  返回值：返回被删除的这个值
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.pop()); //芝麻糊
+console.log(arr); //['每天', '一碗']
+```
+:::
+:small_blue_diamond:`arr.shift();`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，删除其最前的一个值
+  参数：[0]无论有啥参数都是一个功能
+  返回值：返回被删除的这个值
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.shift()); //每天
+console.log(arr); //['一碗', '芝麻糊']
+```
+:::
+:small_blue_diamond:`arr.reverse();`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，对其进行翻转
+  参数：[0]无论有啥参数都是一个功能
+  返回值：返回原数组(被翻转)
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.reverse()); //['芝麻糊', '一碗', '每天']
+```
+:::
+:small_blue_diamond:`arr.sort((a,b)=>{return a-b});`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，对其进行排序
+  参数：[1]可以是一个回调，当排序数的位数大于两位时就只会对比其第一位，此时就可以传递一个回调，接收b：当前的值，a：下一个值，然后对其遍历，return a-b(升序)/b-a(降序)，当return为正数时保留b，相反保留a
+  返回值：返回原数组(被排序)
+*/
+
+/* 示例 */
+const arr = [2, 1, 4, 3, 5];
+arr.sort((a, b) => {
+  return a - b;
+});
+console.log(arr); //[1, 2, 3, 4, 5]
+```
+:::
+`arr.indexOf(s1, [index]);`
+::: details 点我查看代码
+```js
+/*
+  功能：通过值或连同下标从前往后查找想要的值
+  参数：[2]s1：寻找arr中是否有s1，index：从第几个开始查找，可负数
+  返回值：返回其第一个找到值的下标，没找到返回-1
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.indexOf("一碗")); //1
+```
+:::
+`arr.lastIndexOf(s1, [index]);`
+::: details 点我查看代码
+```js
+/*
+  功能：通过值或连同下标从后往前查找想要的值
+  参数：同indexOf
+  返回值：返回其从后往前第一个找到值的下标，没找到返回-1
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.indexOf("一碗")); //1
+```
+:::
+:small_blue_diamond:`arr.join("-");`
+::: details 点我查看代码
+```js
+/*
+  功能：不变原数组，将数组转换成一个去掉"[ ]"的字符串
+  参数：[1]为每个值中间的连接符，且会被toString以下，默认为逗号
+  返回值：为一个被转换后的字符串
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.join("-")); //每天-一碗-芝麻糊
+```
+:::
+:small_blue_diamond:`arr.concat([4,4,4],[5,5,5]);`
+::: details 点我查看代码
+```js
+/*
+  功能：不变原数组，将其参数合并到arr上
+  参数：[n]为数据，每一个数据都会合并到arr上，数组是展开后合并
+  返回值：为被合并后的数组
+*/
+
+/* 示例 */
+const arr = ["每天", "一碗", "芝麻糊"];
+console.log(arr.concat([4,4,4],[5,5,5])); //['每天', '一碗', '芝麻糊', 4, 4, 4, 5, 5, 5]
+```
+:::
+:small_blue_diamond:`arr.slice(index,[index2]);`
+::: details 点我查看代码
+```js
+/*
+  功能：不变原数组，切片[index- index2)的值(包头不包尾)
+  参数：[2]开始的下标和结束的下标
+  返回值：为被切片的数组，下标不对应时返回空数组
+*/
+
+/* 示例 */
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(2, 4)); //[3, 4]
+```
+:::
+:small_blue_diamond:`arr.splice(index, [num], [v1,v2 ...]);`
+::: details 点我查看代码
+```js
+/*
+  功能：
+  1：改变原数组，从index删除num个值(含自己)，并添加v1,v2...
+  2：可浅拷贝
+  参数：[3]index：下标(不规范时删除所有)，num：个数，之后是添加的数据
+  返回值：被删除的值组成的数组，下标不规范时返回全部
+*/
+
+/* 示例 */
+const arr = [1, 1, 2, 2, 3, 3];
+console.log(arr.splice(2, 2, "*")); //[2, 2]
+console.log(arr); //[1, 1, '*', 3, 3]
+```
+:::
+`arr.fill(str,[indexS], [indexE]);`
+::: details 点我查看代码
+```js
+/*
+  功能：改变原数组，将str填充到arr中, 从indexS开始indexE结束(包头不包尾)
+  参数：[3]str：填充的数据，indexS：开始的下标，indexE：结束的下标
+  返回值：原数组(填充后)
+*/
+
+/* 示例 */
+const arr = [1, 1, 2, 2, 3, 3];
+console.log(arr.fill("*", 1, 3)); //[1, '*', '*', 2, 3, 3]
+console.log(arr); //[1, '*', '*', 2, 3, 3]
+```
+:::
+`arr.flat(Infinity);`
+::: details 点我查看代码
+```js
+/*
+  功能：不变原数组，降维打击
+  参数：[1]多少维度被打击，一般写一各Infinity
+  返回值：被打击后的数组
+*/
+
+/* 示例 */
+const arr = [1, [2, [3]]];
+console.log(arr.flat(Infinity)); //[1, 2, 3]
+```
+:::
+:small_blue_diamond:`arr.forEach((item, index, arr) => {});`
+::: details 点我查看代码
+```js
+/*
+  功能：对arr进行遍历
+  参数：[1]一个回调函数，回调接收参数：item：arr每项，index：arr每项下标，arr：被遍历数组
+  返回值：undefined
+*/
+
+/* 示例 */
+const arr = [1, 2, 3, 4, 5];
+arr.forEach((item, index, arr) => {
+  console.log(item); //1 2 3 4 5
+  console.log(index); //0 1 2 3 4
+  console.log(arr); //[1, 2, 3, 4, 5]
+});
+```
+:::
+:small_blue_diamond:`arr.map((item, index, arr) => {return item * 2});`
+::: details 点我查看代码
+```js
+/*
+  功能：没变原数组，对数组的每一项进行操作，映射出一个新值
+  参数：同forEach
+  返回值：为对每一项操作后映射的新数组
+*/
+
+/* 示例 */
+const arr = [1, 2, 3, 4, 5];
+const _arr = arr.map((item, index, arr) => {
+  return item;
+});
+
+console.log(_arr === arr); //false
+```
+:::
+:small_blue_diamond:`arr.some((item, index, arr) => {return 判断});`
+::: details 点我查看代码
+```js
+/*
+  功能：遍历数组判断每一项，一真即真
+  参数：同forEach
+  返回值：布尔值，return后的判断只要为真就返回true，否则false
+*/
+
+/* 示例 */
+const arr = [1, 2, 3, 4, 5];
+const _arr = arr.some((item, index, arr) => {
+  return item === 3;
+});
+
+console.log(_arr); //true
+```
+:::
+:small_blue_diamond:`arr.every((item, index, arr) => {return 判断});`
+::: details 点我查看代码
+```js
+/*
+  功能：遍历数组判断每一项，一假即假
+  参数：同forEach
+  返回值：布尔值，return后的判断全部为真就返回true，否则false
+*/
+
+/* 示例 */
+const arr = [1, 1, 1, 2, 1];
+const _arr = arr.every((item, index, arr) => {
+  return item !== 1;
+});
+
+console.log(_arr); //false
+```
+:::
+:small_blue_diamond:`arr.filter((item, index, arr) => { return 判断 });`
+::: details 点我查看代码
+```js
+/*
+  功能：不变原数组，遍历数组对每项进行判断过滤，当return后为true则保留该项，否则删除
+  参数：同forEach
+  返回值：为所有符合条件被筛选出来的值组成的数组
+*/
+
+/* 示例 */
+const arr = [1, 1, 1, 2, 1];
+const _arr = arr.filter((item, index, arr) => {
+  return item !== 1;
+});
+
+console.log(_arr); //[2]
+```
+:::
+:small_blue_diamond:`arr.reduce((参数1,参数2,参数3,参数4) => { return 表达式 },参数p);`
+::: details 点我查看代码
+```js
+/*
+    功能：万物皆可reduce，一般常用于累计
+    参数：
+      参数1：上一次回调函数的返回值（第一次是初始值）prev
+      参数2：本次的数组元素item
+      参数3：本次数组元素的下标index
+      参数4：原数组的引用
+      参数p：累加的初始值（如果没有，默认是数组的第一个值）
+    返回值：返回累加后的值（最后一次回调函数返回的值）
+*/
+
+/* 示例 */
+const arr = [1, 1, 1, 2, 1];
+const _arr = arr.reduce((A, B, C, D, E) => {
+  console.log(A);
+  console.log(B);
+  console.log(C);
+  console.log(D);
+  console.log(E);
+}, []);
+```
+:::
+
+ES6的方法：
+
+`arr.find((item, index, arr) => { return 判断 });`
+::: details 点我查看代码
+```js
+/*
+  功能：遍历数组根据判断对其值进行查找，找到第一个后停止
+  参数：同forEach
+  返回值：第一个满足条件的item项
+*/
+
+/* 示例 */
+const arr = [1, 1, 1, 2, 1];
+const _arr = arr.find((item, index) => {
+  return item === 2;
+}, []);
+
+console.log(_arr); //2
+```
+:::
+`arr.findIndex((item, index, arr) => { return 判断 });`
+::: details 点我查看代码
+```js
+/*
+  功能：同find
+  参数：同forEach
+  返回值：第一个满足条件的item的下标
+*/
+
+/* 示例 */
+const arr = [1, 1, 1, 2, 1];
+const _arr = arr.findIndex((item, index) => {
+  return item === 2;
+}, []);
+
+console.log(_arr); //3
+```
+:::
 
 ## 正则表达式： 
 

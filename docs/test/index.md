@@ -79,3 +79,5 @@ This is a tip
 ```js
 ```
 :::
+
+:small_blue_diamond:
