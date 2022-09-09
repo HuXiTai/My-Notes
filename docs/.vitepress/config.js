@@ -40,6 +40,7 @@ module.exports = {
   //   appearance: true, //是否启用"暗模式"
   //   lastUpdated: true, //最近更新时间FF
   //   outDir: '../public', //输出目录
+  
   titleTemplate: "Vite & Vue powered static site generator",
 
   themeConfig: {

@@ -7,6 +7,7 @@ import view5 from "/components/005.vue"
 import view6 from "/components/006.vue"
 import view7 from "/components/007.vue"
 import view8 from "/components/008.vue"
+import view9 from "/components/009.vue"
 
 export default {
   ...DefaultTheme,
@@ -19,5 +20,6 @@ export default {
     app.component('view6', view6)
     app.component('view7', view7)
     app.component('view8', view8)
+    app.component('view9', view9)
   }
 }

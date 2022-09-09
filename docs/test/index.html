@@ -5,31 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      span {
+        background-color: #fff;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="box">
+      <h1></h1>
+      <h2></h2>
+    </div>
     <script>
-      "use strict";
-      /* 
->`arr.findIndex((item, index, arr) => { return 判断 });`
->>功能：同find
->>参数：同forEach
->>返回值：第一个满足条件的item的下标
-      */
+      var oBox = document.querySelector(".box");
+      console.log(screen.width);
+      document.addEventListener("DOMContentLoaded", function () {});
 
-      /*
-        功能：同find
-        参数：同forEach
-        返回值：第一个满足条件的item的下标
-      */
+      var id = window.setTimeout(
+        (val) => {
+          console.log(val); //芝麻糊
+        },
+        100,
+        "芝麻糊"
+      );
 
-      /* 示例 */
-      const arr = [1, 1, 1, 2, 1];
-      const _arr = arr.findIndex((item, index) => {
-        return item === 2;
-      }, []);
-
-      console.log(_arr); //3
+      e = e || window.event; //点击事件兼容性
+      box.setCapture && box.setCapture(); //设置拖拽兼容性
     </script>
   </body>
 </html>

@@ -1,4 +1,10 @@
-## 推荐文档：[MDN](https://developer.mozilla.org/zh-CN/)
+## 推荐文档：
+
+### [MDN](https://developer.mozilla.org/zh-CN/) 
+
+### [Lodash](https://www.lodashjs.com/)
+
+### [Momen](http://momentjs.cn/)
 ## 书写位置：
 `<script></script>`标签里 
 
@@ -1226,7 +1232,7 @@ console.log(JSON.stringify(data));
   把"Object"或"Array"类型的数据转换成字符串
 */
 
-const strData = JSON.stringify(data);
+var strData = JSON.stringify(data);
 console.log(JSON.parse(strData)); 
 /* 
   输出：{name: '芝麻糊', age: 18}
@@ -1262,7 +1268,7 @@ Math.hypot(num); //求所有参数平方和的平方根(勾股定理)，返回�
 ## Date函数: 
 - 实例化后才能使用
 ```js
-const date = new Date();
+var date = new Date();
 
 date.getFullYear(); //年
 date.getMonth() + 1; //月
@@ -1303,8 +1309,8 @@ Number.isInteger(123); //判断是否是整数，返回：true
 
 ## Object对象的静态方法：
 ```js
-const obj1 = { name: "芝麻糊" };
-const obj2 = { age: "18" };
+var obj1 = { name: "芝麻糊" };
+var obj2 = { age: "18" };
 
 Object.assign(obj1, obj2);
 /* 
@@ -1823,7 +1829,7 @@ console.log(Array.of("每天", "一碗", "芝麻糊")); //['每天', '一碗', '
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.includes("每天")); //true
 ```
 :::
@@ -1837,7 +1843,7 @@ console.log(arr.includes("每天")); //true
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.at(1)); //一碗
 ```
 :::
@@ -1851,7 +1857,7 @@ console.log(arr.at(1)); //一碗
 */
 
 /* 示例 */
-const arr = ["每天"];
+var arr = ["每天"];
 console.log(arr.push("一碗", "芝麻糊")); //3
 console.log(arr); //['每天', '一碗', '芝麻糊']
 ```
@@ -1866,7 +1872,7 @@ console.log(arr); //['每天', '一碗', '芝麻糊']
 */
 
 /* 示例 */
-const arr = ["每天"];
+var arr = ["每天"];
 console.log(arr.unshift("一碗", "芝麻糊")); //3
 console.log(arr); //['一碗', '芝麻糊', '每天']
 ```
@@ -1881,7 +1887,7 @@ console.log(arr); //['一碗', '芝麻糊', '每天']
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.pop()); //芝麻糊
 console.log(arr); //['每天', '一碗']
 ```
@@ -1896,7 +1902,7 @@ console.log(arr); //['每天', '一碗']
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.shift()); //每天
 console.log(arr); //['一碗', '芝麻糊']
 ```
@@ -1911,7 +1917,7 @@ console.log(arr); //['一碗', '芝麻糊']
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.reverse()); //['芝麻糊', '一碗', '每天']
 ```
 :::
@@ -1925,7 +1931,7 @@ console.log(arr.reverse()); //['芝麻糊', '一碗', '每天']
 */
 
 /* 示例 */
-const arr = [2, 1, 4, 3, 5];
+var arr = [2, 1, 4, 3, 5];
 arr.sort((a, b) => {
   return a - b;
 });
@@ -1942,7 +1948,7 @@ console.log(arr); //[1, 2, 3, 4, 5]
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.indexOf("一碗")); //1
 ```
 :::
@@ -1956,7 +1962,7 @@ console.log(arr.indexOf("一碗")); //1
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.indexOf("一碗")); //1
 ```
 :::
@@ -1970,7 +1976,7 @@ console.log(arr.indexOf("一碗")); //1
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.join("-")); //每天-一碗-芝麻糊
 ```
 :::
@@ -1984,7 +1990,7 @@ console.log(arr.join("-")); //每天-一碗-芝麻糊
 */
 
 /* 示例 */
-const arr = ["每天", "一碗", "芝麻糊"];
+var arr = ["每天", "一碗", "芝麻糊"];
 console.log(arr.concat([4,4,4],[5,5,5])); //['每天', '一碗', '芝麻糊', 4, 4, 4, 5, 5, 5]
 ```
 :::
@@ -1998,7 +2004,7 @@ console.log(arr.concat([4,4,4],[5,5,5])); //['每天', '一碗', '芝麻糊', 4,
 */
 
 /* 示例 */
-const arr = [1, 2, 3, 4, 5];
+var arr = [1, 2, 3, 4, 5];
 console.log(arr.slice(2, 4)); //[3, 4]
 ```
 :::
@@ -2014,7 +2020,7 @@ console.log(arr.slice(2, 4)); //[3, 4]
 */
 
 /* 示例 */
-const arr = [1, 1, 2, 2, 3, 3];
+var arr = [1, 1, 2, 2, 3, 3];
 console.log(arr.splice(2, 2, "*")); //[2, 2]
 console.log(arr); //[1, 1, '*', 3, 3]
 ```
@@ -2029,7 +2035,7 @@ console.log(arr); //[1, 1, '*', 3, 3]
 */
 
 /* 示例 */
-const arr = [1, 1, 2, 2, 3, 3];
+var arr = [1, 1, 2, 2, 3, 3];
 console.log(arr.fill("*", 1, 3)); //[1, '*', '*', 2, 3, 3]
 console.log(arr); //[1, '*', '*', 2, 3, 3]
 ```
@@ -2044,7 +2050,7 @@ console.log(arr); //[1, '*', '*', 2, 3, 3]
 */
 
 /* 示例 */
-const arr = [1, [2, [3]]];
+var arr = [1, [2, [3]]];
 console.log(arr.flat(Infinity)); //[1, 2, 3]
 ```
 :::
@@ -2058,7 +2064,7 @@ console.log(arr.flat(Infinity)); //[1, 2, 3]
 */
 
 /* 示例 */
-const arr = [1, 2, 3, 4, 5];
+var arr = [1, 2, 3, 4, 5];
 arr.forEach((item, index, arr) => {
   console.log(item); //1 2 3 4 5
   console.log(index); //0 1 2 3 4
@@ -2076,8 +2082,8 @@ arr.forEach((item, index, arr) => {
 */
 
 /* 示例 */
-const arr = [1, 2, 3, 4, 5];
-const _arr = arr.map((item, index, arr) => {
+var arr = [1, 2, 3, 4, 5];
+var _arr = arr.map((item, index, arr) => {
   return item;
 });
 
@@ -2094,8 +2100,8 @@ console.log(_arr === arr); //false
 */
 
 /* 示例 */
-const arr = [1, 2, 3, 4, 5];
-const _arr = arr.some((item, index, arr) => {
+var arr = [1, 2, 3, 4, 5];
+var _arr = arr.some((item, index, arr) => {
   return item === 3;
 });
 
@@ -2112,8 +2118,8 @@ console.log(_arr); //true
 */
 
 /* 示例 */
-const arr = [1, 1, 1, 2, 1];
-const _arr = arr.every((item, index, arr) => {
+var arr = [1, 1, 1, 2, 1];
+var _arr = arr.every((item, index, arr) => {
   return item !== 1;
 });
 
@@ -2130,8 +2136,8 @@ console.log(_arr); //false
 */
 
 /* 示例 */
-const arr = [1, 1, 1, 2, 1];
-const _arr = arr.filter((item, index, arr) => {
+var arr = [1, 1, 1, 2, 1];
+var _arr = arr.filter((item, index, arr) => {
   return item !== 1;
 });
 
@@ -2153,8 +2159,8 @@ console.log(_arr); //[2]
 */
 
 /* 示例 */
-const arr = [1, 1, 1, 2, 1];
-const _arr = arr.reduce((A, B, C, D, E) => {
+var arr = [1, 1, 1, 2, 1];
+var _arr = arr.reduce((A, B, C, D, E) => {
   console.log(A);
   console.log(B);
   console.log(C);
@@ -2176,8 +2182,8 @@ ES6的方法：
 */
 
 /* 示例 */
-const arr = [1, 1, 1, 2, 1];
-const _arr = arr.find((item, index) => {
+var arr = [1, 1, 1, 2, 1];
+var _arr = arr.find((item, index) => {
   return item === 2;
 }, []);
 
@@ -2194,8 +2200,8 @@ console.log(_arr); //2
 */
 
 /* 示例 */
-const arr = [1, 1, 1, 2, 1];
-const _arr = arr.findIndex((item, index) => {
+var arr = [1, 1, 1, 2, 1];
+var _arr = arr.findIndex((item, index) => {
   return item === 2;
 }, []);
 
@@ -2203,46 +2209,919 @@ console.log(_arr); //3
 ```
 :::
 
-## 正则表达式： 
+## 正则表达式：
+- 匹配字符串
+
+创建方式：
+```js
+var rg = /123/;
+```
+```js
+var regexp = new RegExp(/123/);
+```
+
+测试正则表达式:
+```js
+rg.test(str) //匹配成功返回true，不成功返回false
+```
+```js
+rg.exec(str) //匹配成功结果以数组形式返回；匹配不成功返回null
+```
+
+正则表达式中的特殊字符:
+| 符号    |                                       含义                                        |
+| ------- | :-------------------------------------------------------------------------------: |
+| `^`     |                          表示匹配行首的文本（以谁开始）                           |
+| `$`     |                          表示匹配行尾的文本（以谁结束）                           |
+| `[]`    |                      方括号中的字符只要匹配其中一个就可以了                       |
+| `*`     |                                  重复0次或更多次                                  |
+| `+`     |                                  重复1次或更多次                                  |
+| `?`     |                                   重复0次或1次                                    |
+| `{n}`   |                                      重复n次                                      |
+| `{n,}`  |                                  重复n次或更多次                                  |
+| `{n,m}` |                                    重复n到m次                                     |
+| `\d`    |                       匹配0-9之间的任一数字，相当于`[0-9]`                        |
+| `\D`    |                       匹配所有0-9以外的字符，相当于`[^0-9]`                       |
+| `\w`    |                匹配任意的字母、数字和下划线，相当于`[A-Za-z0-9_]`                 |
+| `\W`    |             除所有字母、数字、下划线以外的字符，相当于`[^A-ZA-Z0-9_]`             |
+| `\s`    |          匹配空格（包括换行符、制表符、空格符等），相当于`[\t\r\n\v\f]`           |
+| `\S`    |                      匹配非空格的字符，相当于`[^\t\r\n\v\f]`                      |
+| `.`     | 匹配除`\n` `\r`以外的任意字符，如果需要只匹配"."，需要在正则里用转义字符`\.`替代  |
+| `\|`    |                               满足两个条件其中一个                                |
+| `()`    |                   表示优先级，还有分组功能，`对象.groups.属性`                    |
+| `i`     |                             执行对大小写不敏感的匹配                              |
+| `g`     |              执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）               |
+| `m`     | 执行多行匹配，字符串中有`\n`，一般和`^`或`$`配合使用，多行匹配时还要加上`g`修饰符 |
 
 ## DOM：
+获取元素：
+```js
+document.getElementById('id') //返回对象
+document.getElementsByTagName('标签名') //返回伪数组
+document.getElementsByClassName('类名') //返回伪数组
+document.querySelector('选择器') //返回对象
+document.querySelectorAll("选择器") //返回伪数组
+document.body //获取body对象
+document.documentElement //获取html对象
+```
+
+事件三要素：
+1. 事件源
+2. 事件类型
+3. 事件处理函数
+
+事件类型：
+```js
+document.onclick = function (e) {
+  console.log(e); //事件对象
+};
+
+/* 
+  document:事件源
+  onclick:事件类型(点击事件)
+  function(e){}:事件处理函数
+*/
+```
+
+![img-013](/images/013.png)
+`onmouseenter // 进入盒子的时候执行一次`
+
+`onmouseleave // 离开盒子的时候执行一次`
+
+设置元素内容：
+
+`oBox.innerHTML`
+
+`oBox.innerText`
+::: details 点我查看题目
+```js
+const oBox = document.querySelector(".box");
+document.onclick = function (e) {
+  oBox.innerHTML = `<span>芝麻糊</span>`; //在box元素里面插入span元素
+  oBox.innerText = "哈哈哈"; //在box元素里面插入文本
+};
+```
+:::
+
+设置元素属性：
+`元素对象.属性名 = 值`
+```js
+const oBox = document.querySelector(".box");
+oBox.name = "芝麻糊";
+```
 
 ## 属性的增删改查：
 
+### 查找属性：
+- H4：
+
+   1. `元素对象.属性名`
+   ```html
+   <div class="box" id="box"></div>
+   <script>
+     const oBox = document.querySelector(".box");
+     console.dir(oBox.id); //box
+   </script>
+   ```
+   
+   2. `元素对象.getAttribute(属性名)`
+   ```html
+   <!-- 自定义属性只能通过该方法 -->
+   <div class="box" id="box" huxitai="芝麻糊"></div>
+   <script>
+     const oBox = document.querySelector(".box");
+     console.dir(oBox.huxitai); //undefined
+     console.dir(oBox.getAttribute("huxitai")); //芝麻糊
+   </script>
+   ```
+
+- H5：
+
+   1. `元素对象.dataset.属性名` 
+   
+   2. `元素对象.getAttribute('data-属性名')`
+   ```html
+   <div class="box" id="box" data-user="johndoe">
+     John Doe
+   </div>
+   <script>
+     const oBox = document.querySelector(".box");
+     console.dir(oBox.dataset); //{user: "johndoe"}，ie11+
+     console.dir(oBox.getAttribute("data-user")); //johndoe
+   </script>
+   ```
+
+
+### 增改属性：
+   1. 元素对象.属性名 = 属性值
+   ```js
+   const oBox = document.querySelector(".box");
+   oBox.id = "user";
+   console.dir(oBox.id); //user
+   ```
+   2. 元素对象.setAttribute(属性名, 属性值) # 自定义属性只能通过该方法
+   ```html
+   <div class="box" id="box" data-user="johndoe">John Doe</div>
+   <script>
+     /* 自定义属性只能通过该方法 */
+     const oBox = document.querySelector(".box");
+     oBox.setAttribute("data-user", "huxitai");
+     console.log(oBox.getAttribute("data-user")); //huxitai
+   </script>
+   ```
+### 删除属性：
+`元素对象.removeAttribute(属性名)`
+```html
+<div class="box" id="box" data-user="johndoe">John Doe</div>
+<script>
+  const oBox = document.querySelector(".box");
+  oBox.removeAttribute("data-user");
+  console.log(oBox.getAttribute("data-user")); //null
+</script>
+```
+### 元素.classList
+- DOMTokenList对象，记录着所有的class
+```html
+<div class="box box2 box3">John Doe</div>
+<script>
+  const oBox = document.querySelector(".box");
+  console.log(oBox.classList); //['box', 'box2', 'box3', value: 'box box2 box3']
+</script>
+```
+```js
+oBox.classList.add("box4") //添加一个类名
+```
+```js
+oBox.classList.remove("box4") //删除一个类名
+```
+```js
+oBox.classList.contains("box4") //判断是否包含某个类型，返回布尔值
+```
+```js
+//开关：如果当前拥有某个类型，则删除它，如果没有某个类名则添加
+oBox.classList.toggle("box4") 
+```
+### 元素.dataset
+- DOMStringMap对象，记录着所有属性，可以对自定义属性增删改查
+
+### HTMLConllection 对象
+- 是动态的，当伪数组发生变化的时候，集合的内容也会随之改变
+
+### NodeList 对象
+- 是静态的，无论将来获取的元素发生怎样的改变，都不会影响集合的内容
+
 ## 节点操作：
+### 节点属性：
+元素节点：
+```
+nodeType：1 nodeName:"DIV"  nodeValue:null
+```
+
+属性节点：
+```
+nodeType：2 nodeName:"id"  nodeValue:"d1"
+```
+
+文本节点：
+```
+nodeType：3 nodeName:"#text"  nodeValue:文本内容
+```
+
+注释节点：
+```
+nodeType：8 nodeName:"#comment"  nodeValue:注释内容
+```
+### 查找：
+```js
+const oBox = document.querySelector(".box");
+oBox.parentNode //查找父节点
+oBox.childNodes //返回所有子节点, NodeList对象
+oBox.children //返回所有子元素节点，HTMLCollection对象
+oBox.firstChild //返回第一个子节点
+oBox.lastChild //返回最后一个子节点
+oBox.firstElementChild //返回第一个元素子节点
+oBox.lastElementChild //返回最后一个元素子节点
+
+oBox.nextSibling //下一个兄弟节点
+oBox.previousSibling //上一个兄弟节点
+oBox.nextElementSibling  //下一个兄弟元素节点
+oBox.previousElementSibling //上一个兄弟元素节点
+```
+
+### 增改：
+
+`document.createElement("节点名")`
+
+`父节点.appendChild(子节点)`
+
+`父节点.insertBefore(要添加的节点，参照节点)`
+
+`元素.cloneNode()`
+
+`元素.cloneNode(true)`
+
+::: details 点我查看代码
+```html
+<div class="box">
+  <h1></h1>
+  <h2></h2>
+</div>
+<script>
+  var oBox = document.querySelector(".box");
+
+  var oH2 = document.querySelector("h2");
+
+  var oSpan = document.createElement("span"); //创建节点
+
+  oBox.appendChild(oSpan); //添加节点，将节点添加到父节点下最后一个
+
+  oBox.insertBefore(oSpan, oH2); //添加节点，将节点添加到参照节点前一个
+
+  console.log(oBox.cloneNode()); //浅拷贝，返回复制的节点
+
+  console.log(oBox.cloneNode(true)) //深拷贝，返回复制该节点以及下面所有节点
+</script>
+```
+::: 
+
+### 删除：
+`父节点.removeChild(子节点)`
+```html
+<div class="box">
+  <h1></h1>
+  <h2></h2>
+</div>
+<script>
+  var oBox = document.querySelector(".box");
+  var oH2 = document.querySelector("h2");
+  console.log(oBox.removeChild(oH2)); //h2元素
+</script>
+```
+
 
 ## 创建元素的三种方法：
+   1. `document.write("<h1>芝麻糊</h1>")` # 这种方式创建会导致页面全部重绘，效率最低
+   2. `元素.innerHTML = "<h1>芝麻糊</h1>"` # 会导致页面部分重绘，效率较高
+   3. `document.body.appendChild(元素)` # 效率比innerHTML略低，但结构清晰
+
+网页加载的几个步骤： 
+1. Dom树，加载css文件，结合DOM树和CSSOM树形成Render Tree(渲染树)
+2. 布局，就是把哪个盒子和标签该显示在哪个地方进行测量和计算。
+3. 绘制，将布局好的盒子绘制到浏览器的页面上。
 
 ## 事件高级：
+### 注册事件：
+
+1. `元素.onclick = function(){}`
+- 基本事件模型，唯一性
+
+2. `元素.addEventListener("事件类型",function(){}, [options||useCapture])` 
+- DOM事件模型，可多设，先注册先执行
+
+>`options`:一个对象，它指定有关事件侦听器的特征
+>
+>>`capture: Boolean`
+>>
+>>`once: Boolean`
+>>
+>>`passive: Boolean`
+>>
+>>`signal: Boolean`
+>
+>`useCapture`:一个布尔值，指示此类型的事件是否会在被分派到DOM 树中它下面的任何事件listener 之前被分派到已注册对象
+
+3. `元素.attachEvent("on+type", function(){})` 
+- IE事件模型，可多设，先注册后执行
+
+1. 网景事件模型：XXX
+
+### 删除事件：
+
+`node.onclick = null;` # 传统方法
+
+`node.removeEventListener(事件类型, 事件处理函数);` #  删除IE9+事件监听
+
+`node.detachEvent('on'+事件类型, 事件处理函数);` # 删除IE678事件监听
+
+### DOM事件流：
+1. [事件捕获](https://blog.csdn.net/bxz0729/article/details/110001687)
+1. [事件冒泡](https://baike.baidu.com/item/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/4211429?fr=aladdin)
+1. [W3C事件流](https://www.likecs.com/show-306398395.html)
+
+### 事件对象(event)：
+
+`event` #  IE9+事件对象
+
+`window.event` #  IE678事件对象
+
+![img-014](/images/014.png)
+
+`return false` # 传统方法和IE678，阻止默认行为
+
+`type = "selectstart"` # 阻止用户选中文本
+
+`type = "contextmenu"` #  禁用右键菜单
+
+### 事件委托：
+- 把本该给某个元素绑定的事件，利用事件冒泡，给它的父元素绑定
+
+好处：
+1. 减少元素绑定事件的次数，提高效率
+2. 可以对未来增加的兄弟元素生效，不必单独为兄弟元素绑定事件
+
+### 鼠标事件：
+![img-015](/images/015.png)
+
+`e.offsetX` # 鼠标相对于自身元素的水平距离（相对于自身元素的左上角）
+
+`e.offsetY` # 鼠标相对于自身元素的垂直距离
+
+### 拖拽效果：
+
+`position` # 位置设置为：盒子起始位置+拖拽差
+
+`transform` # 位置设置为：拖拽差
+
+::: details 点我查看方法一
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+
+			#box {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+
+		</div>
+
+		<script type="text/javascript">
+			var box = document.querySelector("#box");
+			box.onmousedown = function(e) {
+				// 按下的位置距盒子左上角的坐标
+				// offsetX和offsetY有局限性
+				// 1、当盒子里还有子盒子的时候，offsetX和offsetY是以子盒子作为参照
+				// 2、不同的浏览器上offsetX代表的值不一样。chrome上指的是边框的内边，ie上是边框的外边。
+				var deltaX = e.offsetX;
+				var deltaY = e.offsetY;
+				document.onmousemove = function(e) {
+					// 拖动的点的坐标
+					var moveX = e.pageX;
+					var moveY = e.pageY;
+					
+					// 新的位置的盒子的left和top的值
+					var left = moveX - deltaX;
+					var top = moveY - deltaY;
+
+					// 给盒子设置新位置的left和top
+					box.style.left = left + "px";
+					box.style.top = top + "px";
+				}
+
+				document.onmouseup = function(e) {
+					document.onmousemove = document.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+</html>
+```
+:::
+::: details 点我查看方法二
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+
+			#box {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+
+		</div>
+
+		<script type="text/javascript">
+			var box = document.querySelector("#box");
+			box.onmousedown = function(e) {
+				// 按下的位置距盒子左上角的坐标
+				var pageX = e.pageX;
+				var pageY = e.pageY;
+				
+				// 初始位置下盒子offsetLeft和offsetTop的值
+				var box_left = box.offsetLeft;
+				var box_top = box.offsetTop;
+				// 鼠标按下的位置距离盒子左边框和上边框的距离
+				var deltaX = pageX - box_left;
+				var deltaY = pageY - box_top;
+				document.onmousemove = function(e) {
+					// 拖动的新的位置的坐标
+					var moveX = e.pageX;
+					var moveY = e.pageY;
+					//新的位置下盒子左边和上边应该距离body左边框和上边框的距离 
+					var left = moveX - deltaX;
+					var top = moveY - deltaY;
+					// 设置盒子新的位置 
+					box.style.left = left + "px";
+					box.style.top = top + "px";
+				}
+
+				document.onmouseup = function(e) {
+					document.onmousemove = document.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+</html>
+```
+:::
+::: details 点我查看方法一
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+
+			#box {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+
+		</div>
+
+		<script type="text/javascript">
+			var box = document.querySelector("#box");
+			box.onmousedown = function(e) {
+				// 按下的位置距盒子左上角的坐标
+				var pageX = e.pageX;
+				var pageY = e.pageY;
+				// 盒子的初始位置
+				var box_left = box.offsetLeft;
+				var box_top = box.offsetTop;
+				document.onmousemove = function(e) {
+					// 鼠标移动到新的位置和初始位置的delta值
+					var deltaX = e.pageX - pageX;
+					var deltaY = e.pageY - pageY;
+					
+					// 根据上面的值设置的盒子新的位置
+					var left = box_left + deltaX;
+					var top = box_top + deltaY;
+					// 给盒子设置left和top以改变它的位置
+					box.style.left = left + "px";
+					box.style.top = top + "px";
+				}
+
+				document.onmouseup = function(e) {
+					document.onmousemove = document.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+</html>
+```
+:::
+
+### 键盘事件：
+
+`keydown` # 键盘按下
+
+`keyup` # 键盘抬起
+
+`keypress` # 键盘按下（不识别功能键，比如shift、ctrl、Tab等）
+
 
 ## BOM：
 
+### 窗口加载事件：
+`window.onload = function(){};` # 第一种，加载全部
+
+`document.addEventListener("DOMContentLoaded", function () {});` # 第二种，加载部分
+
+### 窗口大小事件：
+`window.onresize = function(){};` # 窗口滚动执行
+
+`window.onscroll = function(){};` # 鼠标滚动事件
+
+`window.open(url, 方式, 尺寸);` # 跳转到url网页，返回值是新的页面，无法>回退
+
+`window.colce();` # 关掉某个页面
+
+
+### location对象：
+
+![img-016](/images/016.png)
+
+### location对象的方法：
+
+![img-017](/images/017.png)
+
+### userAgent对象：
+- 用户代理，向服务端表明客户端的身份信息
+
+`navigator.userAgent` # 身份信息
+
+`navigator.appName` # Netscape
+
+`navigator.appVersion` # 身份信息
+
+
+### history对象：
+![img-018](/images/018.png)
+
+### screen对象：
+
+`screen.width` # 获得屏幕宽度
+
+`screen.height` # 获得屏幕高度
+
 ## 定时器：
+`setTimeout(回调函数, [间隔的毫秒数], [回调函数传参]);`
+```js
+/* 定时器，执行一次，返回值为1 */
+var id = window.setTimeout((val) => {
+  console.log(val); //芝麻糊
+}, 1000, "芝麻糊");
+```
+
+`clearTimeout(id)`
+```js
+var id = window.setTimeout((val) => {
+  window.clearTimeout(id)
+}, 1000);
+```
+
+`setInterval(回调函数, [间隔的毫秒数], [回调函数传参]);`
+```js
+/* 定时器，一直执行，返回值为1 */
+var id = window.setInterval((val) => {
+  console.log(val); //芝麻糊
+}, 1000, "芝麻糊");
+```
+
+`clearInterval(id)`
+```js
+var id = window.setInterval((val) => {
+  window.clearInterval(id)
+}, 1000);
+```
 
 ## 同步异步：
 
+![img-019](/images/019.png)
+
 ## 元素可视区 client 系列：
+- 只读
+
+`node.clientTop` # 上边框的宽度
+
+`node.clientLeft` # 左边框的宽度
+
+`node.clientWidth` # 内容区宽度+左右内边距
+
+`node.clientHeight` # 内容区高度+上下内边距
 
 ## 元素偏移量offset系列：
+- 只读
+
+`node.offsetTop` # 盒子距离带有定位父元素的上边框的
+
+`node.offsetLeft` # 盒子距离带有定位父元素的左边框
+
+`node.offsetWidth` # 包括内容区/左右内边距、边框
+
+`node.offsetHeight` # 包括内容区/上下内边距、边框
+
+`offsetParent` # 返回带有定位的父元素，没有返回body
+
 
 ## 元素滚动scroll系列：
 
+`scrollTop` # 返回被卷去的上侧距离，可读可写
+
+`scrollLeft` # 返回被卷去的左侧距离，可读可写
+
+`scrollWidth` # 返回自身实际宽度，不包含边框，可读
+
+`scrollHeight` # 返回自身实际高度，不包含边框，可读
+
 ## 视口宽度：
 
-## 滚动条：
+`window.innerWidth`
 
+`window.innerHeight`
+
+`document.documentElement.clientWidth`
+
+`document.documentElement.clientHeight`
+
+## 滚动条：
+公式：
+1. `滑动块的高度 = 屏幕的高度 / 内容的高度 * 滑动槽的高度`
+2. `内容的滚动距离 = 滚动条的滚动距离 / (滑动块的高度 / 滑动槽的高度)`
+
+滚动事件：
+1. `node.mousewheel` # 通过`e.wheelDelta`获得`↑120`/`↓-120`
+2. `node.DOMMouseScroll` # 通过`e.detail`获得`↑-3`/`↓3`，只能通过`addEventListener`注册
+
+::: details 点我查看自定义滚动条案例
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			html {
+				margin: 0px;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.wrap {
+				height: 100%;
+				position: relative;
+			}
+
+			.scrollIn {
+				height: 100%;
+				width: 17px;
+				right: 0px;
+				position: absolute;
+				background-color: #67CDCC;
+			}
+
+			.scrollBar {
+				height: 100px;
+				width: 15px;
+				position: absolute;
+				margin-left: 1px;
+				background-color: red;
+				left: 0px;
+				top: 0px;
+			}
+
+			.content {
+				width: calc(100%-17px);
+				position: absolute;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="content"></div>
+			<div class="scrollIn">
+				<div class="scrollBar"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var scrollBar = document.querySelector(".scrollBar");
+			var scrollIar = document.querySelector("scrollIn");
+			var content = document.querySelector(".content");
+
+			//实现滚动条的滑动
+			scrollBar.onmousedown = function(e) {
+				e = e || window.event;
+				var deltaY = e.offsetY;
+				document.onmousemove = function(e) {
+					e = e || window.event;
+					var move = e.pageY;
+					var top = move - deltaY;
+					var maxHeight = innerHeight - scrollBar.offsetHeight;
+					top = top < 0 ? 0 : top > maxHeight ? maxHeight : top;
+					scrollBar.style.top = top + "px";
+					//滑动块的高度 / 滑动槽的高度 = 滚动条的滚动距离 / 内容的滚动距离
+					var contentSlipDistance = top / (scrollBar.offsetHeight / window.innerHeight);
+					content.style.top = -contentSlipDistance + "px"
+					e.preventDefault();
+				}
+				document.onmouseup = function() {
+					document.onmousemove = document.onmouseup = null;
+				}
+			}
+			//给content添加内容
+			var str = ""
+			for (i = 1; i <= 200; i++) {
+				str += i + "<br />";
+			}
+			content.innerHTML = str;
+			//滑动块的高度 / 滑动槽的高度 = 屏幕的高度 / 内容的高度
+			var pulleyHeight = parseInt(window.innerHeight / content.offsetHeight * window.innerHeight);
+			scrollBar.style.height = pulleyHeight + "px";
+
+			//添加滑轮事件
+			function fn(e) {
+				e = e || window.event;
+				var delta;
+				if (e.wheelDelta) {
+					delta = e.wheelDelta > 0 ? -20 : 20;
+				} else if (e.detail) {
+					delta = e.detail > 0 ? 20 : -20;
+				}
+				delta = e.wheelDelta > 0 ? -20 : 20;
+				var top1 = scrollBar.offsetTop + delta;
+				var maxHeight = innerHeight - scrollBar.offsetHeight;
+				top1 = top1 < 0 ? 0 : top1 > maxHeight ? maxHeight : top1;
+				scrollBar.style.top = top1 + "px"
+				var contentSlipDistance = top1 / (scrollBar.offsetHeight / window.innerHeight);
+				content.style.top = -contentSlipDistance + "px"
+			}
+
+
+			document.addEventListener("mousewheel", fn);
+			document.addEventListener("DOMMouseScroll", fn);
+		</script>
+	</body>
+</html>
+```
+:::
 ## 兼容性：
 
+`e = e || window.event;` # 点击事件兼容性
+
+`box.setCapture && box.setCapture();` # 设置拖拽兼容性
+
 ## 闭包：
+作用：可以扩大局部变量的作用范围，让外部变量访问或修改，还可以自定义模块
+
+闭包产生的条件是：
+   1. 函数嵌套
+   2. 内部函数引用外部函数的局部变量
+   3. 外部函数被调用，内部函数也要被调用或者引用
+
+闭包的生命周期：
+   1. 产生: 在嵌套内部函数定义完时就产生了(不是在调用)
+   2. 死亡: 在嵌套的内部函数成为垃圾对象时 `f = null;`
+
+缺点：
+   1. 内存泄漏：内存无法释放
+   2. 内存溢出：内存被撑满
 
 ## 终极原型链：
 
-## 模拟多线程：
+![img-020](/images/020.png)
+
+## 模拟多线程(Worker)：
+- 构造函数, 加载分线程执行的js文件this指向DedicatedWorkerGlobalScope对象
+
+`Worker.prototype.onmessage` # 用于接收另一个线程的回调函数
+
+`Worker.prototype.postMessage` # 向另一个线程发送消息
 
 ## 深浅拷贝：
 
+**浅拷贝** # 对象不相等，值相等
+
+**深拷贝** # 对象不相等，里面值的地址也不相等
+
 ## 公有、私有、静态、特权：
+
+**公有属性和公有方法** # 设置给实例化对象的属性和方法
+
+**私有属性和私有方法** # 声明在构造函数中的变量或函数
+
+**静态属性和方法** # 构造函数的属性和方法
+
+**特权方法** # 在构造函数里定义的方法
 
 ## 轮询机制：
 
+浏览器先执行同步代码，在执行异步代码，在执行同步代码时，异步代码会被放到浏览器的管理模块进行管理。当异步代码需要执行时，会被回调函数放到任务队列里面排队执行，当同步代码执行完后，主线程会在任务队列中轮询，按顺序拿到回调函数执行
+
 ## 节流、防抖：
+- 都是为了限制函数的执行频次，以优化函数触发频率过高导致的响应速度跟不上触发频率，出现延迟，假死或卡顿的现象
+
+### 节流
+- 当高频的触发某个事件时，保证在n秒内执行一次
+
+::: details 点我查看代码
+```js
+//1:定义一个高频触发事件和事件处理函数
+//2:封装一个节流函数throttle,传一个事件处理函数f和间隔时间delay
+//3:写一个返回函数:
+	//判断时间是否小于一秒,小于则return
+	//大于的话改变this指向并调用
+	//更改lastTime
+document.addEventListener("click", throttle(fn, 1000));
+
+function fn(e) {
+	console.log(e.clientX, e.clientY);
+}
+
+function throttle(f, delay) {
+	var lastTime = 0;
+
+	function ff(e) {
+		var time = Date.now();
+		if (time - lastTime < delay) {
+			return;
+		}
+		f.call(this, e);
+		lastTime = time;
+	}
+	return ff;
+}
+```
+:::
+
+### 防抖
+- 在高频的触发某个事件后，保证在n秒内执行最后一次
+
+::: details 点我查看代码
+```js
+//1:定义一个高频触发事件和事件处理函数
+//2:封装一个防抖函数debounce,传一个事件处理函数f和间隔时间delay
+//3:写一个返回函数:先清除定时器,在设置定时器,改变this指向并调用函数
+var ipt = document.querySelector("#ipt");
+ipt.oninput = debounce(fn,500);
+function fn(e){
+	console.log("搜索:"+ipt.value);
+}
+function debounce(f,delay){
+	var timer;
+	return function ff(e){
+		clearTimeout(timer);
+		var _this = this;
+		timer = setTimeout(function(){
+			f.call(_this,e)
+		},delay)
+	}
+}
+```
+:::
