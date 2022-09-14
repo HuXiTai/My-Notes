@@ -3125,3 +3125,34 @@ function debounce(f,delay){
 }
 ```
 :::
+
+## 文档碎片节点：
+语法：`let fragment = document.createDocumentFragment();`
+
+描述：它们不是主 DOM 树的一部分。通常的用例是创建文档片段，将元素附加到文档片段，然后将文档片段附加到 DOM 树。在 DOM 树中，文档片段被其所有的子元素所代替
+
+::: details 点我查看示例
+```html
+<button type="button" id="btn">点击添加li</button>
+<ul id="list"></ul>
+
+<script type="text/javascript">
+	var btn = document.querySelector("#btn");
+	var list = document.querySelector("#list");
+
+	btn.onclick = function(e) {
+		var fragment = document.createDocumentFragment();
+
+		for (var i = 0; i < 200; i++) {
+			var li = document.createElement("li");
+			li.innerHTML = "li-" + i;
+			// 将创建的li元素添加到碎片节点里
+			fragment.appendChild(li);
+		}
+		// console.log(fragment);
+		list.appendChild(fragment);
+	}
+</script>
+```
+:::
+

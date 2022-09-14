@@ -81,3 +81,7 @@ This is a tip
 :::
 
 :small_blue_diamond:
+
+```sh
+$ 
+```

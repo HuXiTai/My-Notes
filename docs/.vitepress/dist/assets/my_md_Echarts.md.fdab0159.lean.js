@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.9dc59dc9.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"my_md/Echarts.md"}'),r={name:"my_md/Echarts.md"};function s(c,o,n,_,m,d){return a(),e("div")}const f=t(r,[["render",s]]);export{i as __pageData,f as default};
